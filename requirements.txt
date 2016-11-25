@@ -1,6 +1,2 @@
 flask
-sqlalchemy
-alembic
-psycopg2
-sqlacodegen
-flask_sqlalchemy
+redis

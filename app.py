@@ -1,7 +1,4 @@
 from flask import Flask, jsonify
-import os
-from datetime import timedelta
-import datetime
 import redis
 import json
 
