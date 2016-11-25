@@ -3,29 +3,20 @@ import os
 from datetime import timedelta
 import datetime
 import redis
+import json
 
 app = Flask("redis")
 
-print("datainapp",dir(app))
 
 @app.route("/")
 def index():
-	
-    session_dict = {'id': 1, 'name': 'shiva'}
-    redis_db.set('forgot_session', session_dict)
-    print(redis_db.keys())
-    return "hi"
+    
+    #value to save in redis 
+    value_to_set = "shiva"
+    #set value to key
+    redis_db.set('name', value_to_set)   
+    return json.dumps(redis_db.keys())
 
-
-@app.route("/redis")
-def redises():
-    redis_db.expireat('forgot_session', datetime.datetime.now() + timedelta(minutes=1))
-    redis_db.expireat('full stack', datetime.datetime.now() + timedelta(minutes=1))
-    print(redis_db.exists('forgot_session'))
-    if redis_db.exists('forgot_session'):
-        return "expire"
-    else:
-        return "Not Yet"
 
 
 if __name__ == "__main__":

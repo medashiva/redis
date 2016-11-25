@@ -25,3 +25,8 @@ Sample Flask redis app :
 
  7) Run the app 
 		* `python app.py`
+		
+		
+		
+
+find out mode commands --> http://redis.io/commands
