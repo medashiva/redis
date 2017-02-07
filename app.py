@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 import redis
 import json
 
-app = Flask("redis")
+app = Flask("redistest")
 
 
 @app.route("/")
